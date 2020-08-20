@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="my-5 text-center">Doses</h1>
+  <div class="wrapper w-50 mx-auto">
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <div class="form-row">
+        <div class="col">
+          <%= f.input :description %>
+        </div>
+        <div class="col">
+          <%= f.input :ingredient %>
+        </div>
+      </div>
+      <%= f.submit class: 'btn btn-success'%>
+      <%= link_to "Back", edit_cocktail_path(@cocktail), class: 'btn btn-primary mr-3' %>
+    <% end %>
+  </div>
+</div>

@@ -15,7 +15,7 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new(set_params)
     if @cocktail.valid?
       @cocktail.save
-      redirect_to cocktail_path(@cocktail)
+      redirect_to new_cocktail_dose_path(@cocktail)
     else
       render :new
     end
@@ -26,6 +26,17 @@ class CocktailsController < ApplicationController
     @cocktail.destroy
     redirect_to cocktails_path
   end
+
+  def edit
+    @cocktail = Cocktail.find(params[:id])
+  end
+
+  def update
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.update(set_params)
+    redirect_to new_cocktail_dose_path(params[:id])
+  end
+
 
   private
 

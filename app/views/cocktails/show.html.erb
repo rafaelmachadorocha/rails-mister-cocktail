@@ -1,13 +1,15 @@
 <div class="container">
   <h1 class="my-5 text-center"><%= @cocktail.name %></h1>
-  <div class="border wrapper w-50 mx-auto mb-3 p-4">
-    <% @cocktail.doses.each do |dose| %>
-        <div class="dose d-flex justify-content-between dose w-100">
-          <p class="description"> <%= dose.description %></p><p class="ingredient"> <%= dose.ingredient_id %></p>
-        </div>
+  <div class="border doses-card mx-auto mb-3 p-4">
+    <ul class="dose-card dose w-100">
+      <% @cocktail.doses.each do |dose| %>
+        <li class="description d-block"><%= dose.description %> <%= dose.ingredient.name %></li>
       <% end %>
-  </div>
-  <div class="buttons w-50 mx-auto">
-    <%= link_to "Back", cocktails_path, class: 'btn btn-primary mr-3' %><%= link_to "Delete Cocktail", cocktail_path(@cocktail), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    </ul>
+    <div class="buttons w-50 mx-auto">
+      <%= link_to "Back", cocktails_path, class: 'btn btn-primary mr-1' %>
+      <%= link_to "Add new dose", new_cocktail_dose_path(@cocktail), class: 'btn btn-success mr-1' %>
+      <%= link_to "Delete Cocktail", cocktail_path(@cocktail), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
   </div>
 </div>
