@@ -2,12 +2,12 @@
   <h1 class="my-5 text-center">Create a cocktail</h1>
     <div class='row justify-content-center'>
       <div class="col-12 col-lg-4">
-        <%= simple_form_for(@cocktail) do |f| %>
-          <%= f.input :name, label: 'Cocktail name' %>
-          <%= f.submit class: 'btn btn-success'%>
-          <%= link_to "Back", cocktails_path, class: 'btn btn-primary mr-3' %>
-        <% end %>
-        <div class="buttons w-50 mx-auto">
+        <div class="wrapper">
+          <%= simple_form_for(@cocktail) do |f| %>
+            <%= f.input :name, label: 'Cocktail name' %>
+            <%= f.submit class: 'btn btn-success'%>
+            <%= link_to "Back", cocktails_path, class: 'btn btn-primary mr-3' %>
+          <% end %>
         </div>
       </div>
     </div>

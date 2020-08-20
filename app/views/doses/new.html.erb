@@ -1,3 +1,27 @@
-<%= @cocktail.doses.empty? ? (render 'new') : (render 'new_from_show')  %>
+<div class="container">
+  <h1 class="my-5 text-center">Doses</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-12 col-lg-5">
+      <div class="wrapper"> 
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <div class="form-row">
+            <div class="col">
+              <%= f.input :description %>
+            </div>
+            <div class="col">
+              <%= f.input :ingredient %>
+            </div>
+          </div>
+          <%= f.submit class: 'btn btn-success'%>
+          <% if @cocktail.doses.empty? %>
+            <%= link_to "Back", edit_cocktail_path(@cocktail), class: 'btn btn-primary mr-3' %>
+          <% else %>
+            <%= link_to "Back", cocktail_path(@cocktail), class: 'btn btn-primary mr-3' %> 
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
   
 
