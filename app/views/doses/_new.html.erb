@@ -13,7 +13,7 @@
             </div>
           </div>
           <%= f.submit class: 'btn btn-success'%>
-          <% if @from_create %>
+          <% if from_create %>
             <%= link_to "Back", edit_cocktail_path(@cocktail), class: 'btn btn-primary mr-3' %>
           <% else %>
             <%= link_to "Back", cocktail_path(@cocktail), class: 'btn btn-primary mr-3' %> 

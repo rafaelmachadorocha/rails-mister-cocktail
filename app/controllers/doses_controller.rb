@@ -3,7 +3,6 @@ class DosesController < ApplicationController
   before_action :new_dose, only:[:new, :from_show]
   
   def new
-    @from_create = true
   end
 
   def create
@@ -24,7 +23,6 @@ class DosesController < ApplicationController
   end
 
   def from_show
-    @from_create = false
   end
 
   private
