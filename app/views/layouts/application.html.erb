@@ -12,8 +12,9 @@
   </head>
 
   <body>
-    <div class="background">
-        <%= yield %>
-    </div>
+    <div id="bg">
+      <%= image_tag("bg.jpg", alt: "background", class:"img-bg") %>
+    </div>    
+    <%= yield %>
   </body>
 </html>

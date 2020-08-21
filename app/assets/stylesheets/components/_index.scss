@@ -1,4 +1,8 @@
 // Import your components CSS files here.
+* {
+  position: relative; 
+}
+
 @import "alert";
 @import "avatar";
 @import "navbar";
