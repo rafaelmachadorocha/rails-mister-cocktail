@@ -30,3 +30,15 @@
   color: rgb(60, 60, 60);
 }
 
+.errors {
+  background-color: rgba(240, 240, 240, .8);
+  padding: 30px 10px;
+  margin-top: 5em;
+  min-width: 360px;
+}
+
+.errors h2 {
+  font-size: 1.5em;
+  margin-bottom: 2em;
+  text-align: center;
+}

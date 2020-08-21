@@ -37,6 +37,9 @@ class CocktailsController < ApplicationController
     redirect_to new_cocktail_dose_path(params[:id])
   end
 
+  def ingredient
+    @cocktails = Cocktail.joins(doses: :ingredient).where('ingredients.name LIKE ?', params[:ingredient])
+  end
 
   private
 
