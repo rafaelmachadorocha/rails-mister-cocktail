@@ -11,7 +11,7 @@
             <div class="wrapper">
               <h2 class="mb-3"> <%= cocktail.name %> </h2>
               <% if cocktail.photo.attached? %>
-                <%= cl_image_tag cocktail.photo.key, alt: "Cocktail image", class: "drink-image" %>
+                <%= cl_image_tag cocktail.photo.key, crop: :fill, alt: "Cocktail image", class: "drink-image" %>
               <% else %>
                 <%= image_tag("https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd", alt: "Cocktail image", class: "drink-image") %>
               <% end %>  
