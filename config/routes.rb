@@ -6,7 +6,9 @@ Rails.application.routes.draw do
       post 'ingredient'
       get 'ingredient'
     end
-    resources :doses, only: [:new, :create]
+    resources :doses, only: [:new, :create] do
+      get 'from_show', on: :new
+    end
   end
     resources :doses, only: :destroy
 

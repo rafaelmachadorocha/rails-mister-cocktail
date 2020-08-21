@@ -1,8 +1,9 @@
 class DosesController < ApplicationController
+  
+  before_action :new_dose, only:[:new, :from_show]
+  
   def new
-    @cocktail = Cocktail.find(params['cocktail_id'])
-    @dose = Dose.new
-    @ingredients = Ingredient.all
+    @from_create = true
   end
 
   def create
@@ -22,6 +23,10 @@ class DosesController < ApplicationController
   def destroy
   end
 
+  def from_show
+    @from_create = false
+  end
+
   private
 
   def add_ingredient(parameter)
@@ -33,6 +38,12 @@ class DosesController < ApplicationController
       new_ingredient.save
       new_ingredient
     end 
+  end
+
+  def new_dose
+    @cocktail = Cocktail.find(params['cocktail_id'])
+    @dose = Dose.new
+    @ingredients = Ingredient.all
   end
 
   def set_ingredient
