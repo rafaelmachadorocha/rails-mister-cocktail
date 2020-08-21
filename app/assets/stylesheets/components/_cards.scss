@@ -47,6 +47,18 @@
   color: #0fa3bd;
 }
 
+.edit-icon {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 48px;
+  color: $success;
+}
+
+.edit-icon:hover {
+  color: #0fa3bd;
+}
+
 .drink-image {
   object-fit: cover;
   width: 100%;
@@ -54,15 +66,23 @@
   box-shadow: 0px 0px 3px rgb(201, 104, 130);
 }
 
+.show-image {
+  display: block;
+  box-shadow: 0px 0px 3px rgb(201, 104, 130);
+  width: 90%;
+  max-height: 500px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
 .doses-card {
   background-color: rgba(30, 30, 30, .8);
   border: 1px solid #B04B67 !important;
   box-shadow: 0px 0px 2px rgb(201, 104, 130);
   font-size: 1.4em;
-  max-width: 70%;
+  max-width: 100%;
   margin: 0 auto;
   min-height: 400px;
-  padding: 40px;
   position: relative;
 }
 

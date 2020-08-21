@@ -31,10 +31,14 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
   end
 
+  def edit_from_show
+    @cocktail = Cocktail.find(params[:id])
+  end
+
   def update
     @cocktail = Cocktail.find(params[:id])
     @cocktail.update(set_params)
-    redirect_to new_cocktail_dose_path(params[:id])
+    params[:from_show] == 'true' ? (redirect_to cocktail_path(@cocktail)) : (redirect_to new_cocktail_dose_path(params[:id]))
   end
 
   def ingredient
