@@ -12,3 +12,9 @@ h1 {
   text-shadow: -1px 1px 3px #29839B;
   font-family: 'Dancing Script', cursive;
 }
+
+@media (min-width: 280px) {
+  body {
+    min-height: 100vh;
+  } 
+}
