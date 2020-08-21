@@ -1,14 +1,24 @@
 .cocktail-card {
-  background-color: rgba(240, 240, 240, .8);
+  background-color: rgba(30, 30, 30, .8);
+  border: 1px solid #B04B67;
+  box-shadow: 0px 0px 4px rgb(201, 104, 130);
+  color: rgb(201, 104, 130);
   height: 400px; 
   position: relative;
   padding: 20px;
+}
+
+.cocktail-card h2 {
+  font-family: 'Dancing Script', cursive;
+  text-shadow: 0px 0px 1px #000000;
+  font-weight: lighter;
 }
 
 .drink-image {
   object-fit: cover;
   max-width: 100%;
   height: 70%;
+  box-shadow: 0px 0px 3px rgb(201, 104, 130);
 }
 
 .doses-card {
@@ -31,7 +41,8 @@
 }
 
 .errors {
-  background-color: rgba(240, 240, 240, .8);
+  background-color: rgba(30, 30, 30, .8);
+  border: 2px solid #B04B67;
   padding: 30px 10px;
   margin-top: 5em;
   min-width: 360px;

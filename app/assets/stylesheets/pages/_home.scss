@@ -1,5 +1,13 @@
 // Specific CSS for your home-page
 body {
-  background-image: asset-url('cocktails_background.jpg');
-  background-size: cover;
+  background-image: asset-url('bg.jpg');
+  background-size: 100%;
+  color: rgb(201, 104, 130);
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 3em;
+  text-shadow: -1px 1px 3px #29839B;
+  font-family: 'Dancing Script', cursive;
 }
