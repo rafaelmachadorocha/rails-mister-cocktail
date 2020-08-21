@@ -5,8 +5,9 @@
         <div class="wrapper">
           <%= simple_form_for(@cocktail) do |f| %>
             <%= f.input :name, label: 'Cocktail name' %>
+            <%= f.input :photo, as: :file, input_html: { class: 'input-photo' } %>
             <%= f.submit class: 'btn btn-success'%>
-            <%= link_to "Back", cocktails_path, class: 'btn btn-primary mr-3' %>
+            <%= link_to "Back", cocktails_path, class: 'btn btn-info mr-3' %>
           <% end %>
         </div>
       </div>

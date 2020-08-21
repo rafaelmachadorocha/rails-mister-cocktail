@@ -1,43 +1,81 @@
 .cocktail-card {
   background-color: rgba(30, 30, 30, .8);
   border: 1px solid #B04B67;
-  box-shadow: 0px 0px 4px rgb(201, 104, 130);
+  box-shadow: 0px 0px 2px rgb(201, 104, 130);
   color: rgb(201, 104, 130);
   height: 400px; 
   position: relative;
   padding: 20px;
+  position: relative;
+}
+
+.wrapper {
+  height: 350px; 
 }
 
 .cocktail-card h2 {
-  font-family: 'Dancing Script', cursive;
-  text-shadow: 0px 0px 1px #000000;
+  font-family: $drink-title-font;
+  color: rgb(220, 220, 220);
+  text-shadow: 0px 0px 3px #000000;
   font-weight: lighter;
+}
+
+.no-style {
+  position: relative;
+  transition: 1s;
+}
+
+.no-style:hover {
+  text-decoration: none;
+  
+    .cocktail-card {
+      background-color: rgba(50, 50, 50, .8);
+    }
+}
+
+.delete-icon {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 18px;
+  color: $success;
+}
+
+.delete-icon:hover {
+  color: #0fa3bd;
 }
 
 .drink-image {
   object-fit: cover;
-  max-width: 100%;
-  height: 70%;
+  width: 100%;
+  height: 90%;
   box-shadow: 0px 0px 3px rgb(201, 104, 130);
 }
 
 .doses-card {
-  background-color: rgba(240, 240, 240, .8);
-  font-size: 2em;
-  max-width: 60%;
+  background-color: rgba(30, 30, 30, .8);
+  border: 1px solid #B04B67 !important;
+  box-shadow: 0px 0px 2px rgb(201, 104, 130);
+  font-size: 1.4em;
+  max-width: 70%;
+  margin: 0 auto;
   min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   padding: 40px;
-  border: solid 2px rgb(60, 60, 60) !important;
+  position: relative;
 }
 
+.buttons {
+  text-align: center;
+
+    a { 
+      margin-bottom: 5px;
+    }
+}
 
 .dose-card {
   list-style: none;
-  color: rgb(60, 60, 60);
+  color: rgb(220, 220, 220);
+  text-shadow: 0px 0px 3px #000000;
 }
 
 .errors {

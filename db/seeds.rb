@@ -7,7 +7,7 @@
 Cocktail.destroy_all
 Ingredient.destroy_all
 Dose.destroy_all
-5.times do
+6.times do
   cocktail = Cocktail.create!(name: Faker::DcComics.unique.heroine)
 
   3.times do

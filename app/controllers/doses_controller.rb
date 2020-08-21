@@ -39,7 +39,6 @@ class DosesController < ApplicationController
   end
 
   def new_dose
-    @cocktail = Cocktail.find(params['cocktail_id'])
     @dose = Dose.new
     @ingredients = Ingredient.all
   end
