@@ -5,12 +5,13 @@
   color: rgb(201, 104, 130);
   height: 400px; 
   position: relative;
-  padding: 20px;
-  position: relative;
+  z-index: 2;
 }
 
 .wrapper {
-  height: 350px; 
+  height: 100%;
+  padding: 20px;
+  overflow: hidden; 
 }
 
 .cocktail-card h2 {
@@ -28,9 +29,10 @@
 .no-style:hover {
   text-decoration: none;
   
-    .cocktail-card {
-      background-color: rgba(50, 50, 50, .8);
-    }
+}
+
+.cocktail-card:hover {
+  background-color: rgba(50, 50, 50, .8);
 }
 
 .delete-icon {
@@ -48,7 +50,7 @@
 .drink-image {
   object-fit: cover;
   width: 100%;
-  height: 90%;
+  max-height: 85%;
   box-shadow: 0px 0px 3px rgb(201, 104, 130);
 }
 
@@ -90,4 +92,14 @@
   font-size: 1.5em;
   margin-bottom: 2em;
   text-align: center;
+  color: rgb(220, 220, 220);
+  text-shadow: 0px 0px 3px #000000;
+}
+
+
+
+@media (min-width: 992px) {
+  .cocktail-card {
+    min-height: 500px; 
+  }
 }
