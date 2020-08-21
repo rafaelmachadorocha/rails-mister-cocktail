@@ -42,7 +42,7 @@ class CocktailsController < ApplicationController
   end
 
   def ingredient
-    @cocktails = Cocktail.joins(doses: :ingredient).where('ingredients.name LIKE ?', params[:ingredient])
+    @cocktails = Cocktail.joins(doses: :ingredient).where('ingredients.name LIKE ?', params[:ingredient].downcase)
   end
 
   private

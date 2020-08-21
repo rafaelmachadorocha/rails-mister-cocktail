@@ -9,7 +9,7 @@ class DosesController < ApplicationController
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new(set_dose)
     @dose.cocktail = @cocktail
-    param_ingredient = set_ingredient[:ingredient]
+    param_ingredient = set_ingredient[:ingredient].downcase
     @dose.ingredient = add_ingredient(param_ingredient)
     if @dose.valid?
       @dose.save
