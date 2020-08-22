@@ -1,24 +1,24 @@
 <div class="container">
   <h1 class="text-center my-4">Cocktails</h1>
- <div class="row mb-4">
-    <% @cocktails.each do |cocktail| %>
-      <div class="col-12 col-md-6 col-lg-4 column">
-        <div class="cocktail-card mt-3">
-          <%= link_to cocktail_path(cocktail), class: 'delete-icon', method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <i class="fas fa-trash"></i>
-          <% end %>
-          <%= link_to cocktail_path(cocktail), class: 'no-style' do %>
-            <div class="wrapper">
-              <h2 class="mb-3"> <%= cocktail.name %> </h2>
-              <% if cocktail.photo.attached? %>
-                <%= cl_image_tag cocktail.photo.key, crop: :fill, alt: "Cocktail image", class: "drink-image" %>
-              <% else %>
-                <%= image_tag("https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd", alt: "Cocktail image", class: "drink-image") %>
-              <% end %>  
-            </div>
-          <% end %>
+  <div class="row mb-4">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-12 col-md-6 col-lg-4 column">
+          <div class="cocktail-card mt-3">
+            <%= link_to cocktail_path(cocktail), class: 'delete-icon', method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+            <%= link_to cocktail_path(cocktail), class: 'no-style' do %>
+              <div class="wrapper">
+                <h2 class="mb-3"> <%= cocktail.name %> </h2>
+                <% if cocktail.photo.attached? %>
+                  <%= cl_image_tag cocktail.photo.key, crop: :fill, alt: "Cocktail image", class: "drink-image" %>
+                <% else %>
+                  <%= image_tag("https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd", alt: "Cocktail image", class: "drink-image") %>
+                <% end %>  
+              </div>
+            <% end %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 </div>

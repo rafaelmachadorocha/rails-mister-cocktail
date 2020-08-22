@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col">
       <div class="border doses-card my-5 p-4">
-        <%= link_to edit_from_show_path(@cocktail), class: 'edit-icon' do %>
+        <%= link_to edit_cocktail_path(@cocktail), class: 'edit-icon' do %>
           <i class="fas fa-edit"></i>
         <% end %>
         <%= link_to cocktail_path(@cocktail), class: 'delete-icon', method: :delete, data: { confirm: 'Are you sure?' } do %>
@@ -23,9 +23,19 @@
             </li>
           <% end %> 
         </ul>
-        <div class="buttons w-80 mx-auto">
-          <%= link_to "Back", cocktails_path, class: 'btn btn-info' %>
-          <%= link_to "Add new dose", from_show_new_cocktail_dose_path(@cocktail), class: 'btn btn-success' %>
+        <div class="form-show w-75 h6 mt-5 mx-auto">
+          <%= simple_form_for [@cocktail, @dose] do |f| %>
+            <div class="form-row">
+              <div class="col-6">
+                <%= f.input :description, label: :Measure %>
+              </div>
+              <div class="col-6">
+                <%= f.input :ingredient %>
+              </div>
+            </div>
+            <%= f.submit 'Add new dose', class: 'btn mr-1 btn-success'%>
+            <%= link_to "Back", cocktails_path, class: 'btn btn-info' %>
+          <% end %>
         </div>
       </div>
     </div>

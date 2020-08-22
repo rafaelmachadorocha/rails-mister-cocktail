@@ -7,10 +7,9 @@ Rails.application.routes.draw do
       get 'ingredient'
     end
     resources :doses, only: [:new, :create] do
-      get 'from_show', on: :new
     end
   end
   delete '/doses/:id', to: 'doses#destroy', as: :dose
-  get '/cocktails/:id/edit_from_show', to: 'cocktails#edit_from_show', as: 'edit_from_show'
+  get '/cocktails/:cocktail_id/doses', to: 'cocktails#show'
   root to: 'cocktails#index'
 end

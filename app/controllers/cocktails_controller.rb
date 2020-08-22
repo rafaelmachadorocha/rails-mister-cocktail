@@ -4,7 +4,8 @@ class CocktailsController < ApplicationController
   end
 
   def show
-    @cocktail = Cocktail.find(params[:id])
+    @cocktail = params[:id] ? (Cocktail.find(params[:id])) : (Cocktail.find(params[:cocktail_id]))
+    @dose = Dose.new
   end
 
   def new
@@ -15,7 +16,7 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new(set_params)
     if @cocktail.valid?
       @cocktail.save
-      redirect_to new_cocktail_dose_path(@cocktail)
+      redirect_to cocktail_path(@cocktail)
     else
       render :new
     end
@@ -31,14 +32,10 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
   end
 
-  def edit_from_show
-    @cocktail = Cocktail.find(params[:id])
-  end
-
   def update
     @cocktail = Cocktail.find(params[:id])
     @cocktail.update(set_params)
-    params[:from_show] == 'true' ? (redirect_to cocktail_path(@cocktail)) : (redirect_to new_cocktail_dose_path(params[:id]))
+    redirect_to cocktail_path(@cocktail)
   end
 
   def ingredient
