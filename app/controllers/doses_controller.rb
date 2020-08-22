@@ -25,11 +25,11 @@ class DosesController < ApplicationController
   private
 
   def add_ingredient(name)
-    @ingredient = Ingredient.find_by_name(name)
+    @ingredient = Ingredient.find_by_name(name&.downcase)
     if @ingredient
       @dose.ingredient = @ingredient
     else
-      @new_ingredient = Ingredient.new(name: name)
+      @new_ingredient = Ingredient.new(name: name&.downcase)
       if @new_ingredient.valid?
         @new_ingredient.save
         @dose.ingredient = @new_ingredient
