@@ -10,7 +10,7 @@
         <% end %>
         <h1 class="text-center my-3 mb-0"><%= @cocktail.name %></h1>
           <% if @cocktail.photo.attached? %>
-            <%= cl_image_tag @cocktail.photo.key, alt: "Cocktail image", crop: :fill, class: "show-image" %>
+            <%= cl_image_tag @cocktail.photo.key, alt: "Cocktail image", transformation: { width: 548, height: 400, crop: :fill, gravity: 'auto' }, class: "show-image" %>
           <% else %>
             <%= image_tag("https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd", alt: "Cocktail image", class: "show-image") %>
           <% end %>  
