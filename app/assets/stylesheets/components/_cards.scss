@@ -19,6 +19,9 @@
   color: rgb(220, 220, 220);
   text-shadow: 0px 0px 3px #000000;
   font-weight: lighter;
+  @media (max-width: 768px) {
+    font-size: 1.5em;
+  }
 }
 
 .no-style {
