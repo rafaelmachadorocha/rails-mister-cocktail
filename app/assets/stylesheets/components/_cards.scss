@@ -26,12 +26,10 @@
 
 .no-style {
   position: relative;
-  transition: 1s;
 }
 
 .no-style:hover {
   text-decoration: none;
-  
 }
 
 .cocktail-card:hover {
@@ -87,7 +85,17 @@
 .delete-icon-dose {
   font-size: .6em;
   margin-left: .4em;
+  transition: .15s;
+
+  @media (max-width: 768px) {
+    font-size: .9em;
+  }
+
+  &:hover {
+    color:rgb(201, 104, 130);
+  }
 }
+
 
 .drink-image {
   object-fit: cover;
