@@ -49,6 +49,22 @@
   }
 }
 
+.delete-icon-index {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 18px;
+  color: $success;
+  @media (max-width: 768px) {
+    font-size: 1.3em;
+    top: 15px;
+  }
+}
+
+.delete-icon-index:hover {
+  color: #0fa3bd;
+}
+
 .delete-icon:hover {
   color: #0fa3bd;
 }
