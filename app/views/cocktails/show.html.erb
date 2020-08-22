@@ -25,7 +25,7 @@
         </ul>
         <div class="form-show w-75 h6 mt-5 mx-auto">
           <%= simple_form_for [@cocktail, @dose] do |f| %>
-            <div class="form-row">
+            <div class="form-row justify-content-center">
               <div class="col-6">
                 <%= f.input :description, label: :Measure, placeholder: '3 leaves of' %>
               </div>
@@ -33,8 +33,8 @@
                 <%= f.input :ingredient, placeholder: 'mint' %>
               </div>
             </div>
-            <%= f.submit 'Add new dose', class: 'btn mr-1 btn-success'%>
-            <%= link_to "Back", cocktails_path, class: 'btn btn-info' %>
+            <%= f.submit 'Add new dose', class: 'btn mr-1 mb-2 btn-success' %>
+            <%= link_to "Back", cocktails_path, class: 'btn mb-2 btn-info' %>
           <% end %>
         </div>
       </div>
