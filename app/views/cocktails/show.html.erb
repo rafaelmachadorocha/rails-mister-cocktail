@@ -16,8 +16,12 @@
           <% end %>  
         <ul class="dose-card mb-4 mt-3 p-0">
           <% @cocktail.doses.each do |dose| %>
-            <li class="description text-center d-block"><%= dose.description %> de <em><span class="ingredient"><%= dose.ingredient.name %></span></em></li>
-          <% end %>
+            <li class="description text-center d-block"><%= dose.description %> de <em><span class="ingredient"><%= dose.ingredient.name %></span></em>
+            <%= link_to dose_path(dose), class: 'delete-icon-dose', method: :delete do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+            </li>
+          <% end %> 
         </ul>
         <div class="buttons w-80 mx-auto">
           <%= link_to "Back", cocktails_path, class: 'btn btn-info mr-1' %>
