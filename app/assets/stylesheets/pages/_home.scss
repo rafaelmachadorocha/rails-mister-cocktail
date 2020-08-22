@@ -8,6 +8,10 @@ h1 {
   font-size: 3em;
   text-shadow: -1px 1px 3px #29839B;
   font-family: 'Dancing Script', cursive;
+
+  @media (max-width: 768px) {
+    font-size: 2em;
+  }
 }
 
 .img-bg {
