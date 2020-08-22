@@ -6,11 +6,9 @@ class DosesController < ApplicationController
   def create
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new(set_dose)
-    @ingredient = Ingredient.new
     @dose.cocktail = @cocktail
     add_ingredient(set_ingredient[:ingredient])
-    if @dose.valid? 
-      @dose.save
+    if @dose.save
       redirect_to cocktail_path(params[:cocktail_id])
     else
       render 'cocktails/show'
@@ -26,13 +24,14 @@ class DosesController < ApplicationController
 
   private
 
-  def add_ingredient(parameter)
-    @ingredient = Ingredient.find_by_name(parameter)
+  def add_ingredient(name)
+    @ingredient = Ingredient.find_by_name(name)
     if @ingredient
       @dose.ingredient = @ingredient
     else
-      @new_ingredient = Ingredient.new(name: parameter)
+      @new_ingredient = Ingredient.new(name: name)
       if @new_ingredient.valid?
+        @new_ingredient.save
         @dose.ingredient = @new_ingredient
       end
     end 

@@ -3,6 +3,9 @@ class Ingredient < ApplicationRecord
   has_many :doses
   before_destroy :checkParentDoses
 
+  def to_s
+    self.name
+  end
  
   private
 

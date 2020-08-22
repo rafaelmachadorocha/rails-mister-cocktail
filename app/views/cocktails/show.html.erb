@@ -16,7 +16,7 @@
           <% end %>  
         <ul class="dose-card mb-4 mt-3 p-0">
           <% @cocktail.doses.each do |dose| %>
-            <li class="description text-center d-block"><%= dose.description %> de <em><span class="ingredient"><%= dose.ingredient.name %></span></em>
+            <li class="description text-center d-block"><%= dose.description %> <em><span class="ingredient"><%= dose.ingredient.name %></span></em>
             <%= link_to dose_path(dose), class: 'delete-icon-dose', method: :delete do %>
               <i class="fas fa-trash"></i>
             <% end %>
@@ -27,10 +27,10 @@
           <%= simple_form_for [@cocktail, @dose] do |f| %>
             <div class="form-row">
               <div class="col-6">
-                <%= f.input :description, label: :Measure %>
+                <%= f.input :description, label: :Measure, placeholder: '3 leaves of' %>
               </div>
               <div class="col-6">
-                <%= f.input :ingredient %>
+                <%= f.input :ingredient, placeholder: 'mint' %>
               </div>
             </div>
             <%= f.submit 'Add new dose', class: 'btn mr-1 btn-success'%>
