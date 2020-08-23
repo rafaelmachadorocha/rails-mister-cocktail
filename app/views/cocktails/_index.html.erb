@@ -2,7 +2,7 @@
   <h1 class="text-center my-4">Cocktails</h1>
   <div class="row mb-4">
       <% @cocktails.each do |cocktail| %>
-        <div class="col-12 col-md-6 col-lg-4 column">
+        <div class="col-12 col-md-6">
           <div class="cocktail-card mt-3">
             <%= link_to cocktail_path(cocktail), class: 'delete-icon-index', method: :delete, data: { confirm: "Are you sure you want to delete #{cocktail.name}?" } do %>
               <i class="fas fa-trash"></i>
