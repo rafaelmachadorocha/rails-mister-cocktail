@@ -43,5 +43,11 @@ input {
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
-	z-index: -1;
+  z-index: -1;
+  @media (max-width: 510px) {
+    font-size: .9em !important;
+  }
+  @media (max-width: 300px) {
+    font-size: .6em !important;
+  }
 }
