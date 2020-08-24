@@ -40,8 +40,10 @@
   position: absolute;
   z-index: 1;
   top: 20px;
-  right: 18px;
+  right: 28px;
   color: $success;
+  width: 20px;
+  height: 20px;
   @media (max-width: 768px) {
     font-size: .8em;
     right: 0;
@@ -74,8 +76,11 @@
   position: absolute;
   z-index: 1;
   top: 20px;
-  right: 48px;
+  right: 68px;
   color: $success;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
   @media (max-width: 768px) {
     font-size: .8em;
     right: 0;
