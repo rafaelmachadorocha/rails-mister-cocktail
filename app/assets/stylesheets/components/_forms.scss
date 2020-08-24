@@ -15,6 +15,11 @@ label[for="cocktail_photo"] {
     background-color: #8c3c52;
     border-color: #83384d;
   }
+
+  @media (max-width: 510px) {
+    line-height: 32px;
+    height: 32px;
+  }
 }
 
 label {
