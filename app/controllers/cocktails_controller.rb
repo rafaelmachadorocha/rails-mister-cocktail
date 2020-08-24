@@ -37,7 +37,7 @@ class CocktailsController < ApplicationController
     redirect_to cocktail_path(@cocktail)
   end
 
-  def ingredient
+  def search
     @cocktails = Cocktail.joins(doses: :ingredient).where('ingredients.name LIKE ?', "%#{params[:ingredient]&.downcase}%").distinct
   end
 

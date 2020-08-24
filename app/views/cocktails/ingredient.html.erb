@@ -1,5 +1,0 @@
-<%= @cocktails.empty? ? (render 'index_find_error') : (render 'index') %>
-<div class="buttons mb-4 d-flex justify-content-center">
-  <%= link_to "Add a new Cocktail", new_cocktail_path, class: 'mr-2 btn btn-primary' %>
-  <%= link_to "Back", cocktails_path, class: 'btn btn-info' %>
-</div>
