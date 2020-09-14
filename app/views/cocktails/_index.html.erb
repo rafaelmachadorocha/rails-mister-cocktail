@@ -1,5 +1,11 @@
 <div class="container">
   <h1 class="text-center my-4">Cocktails</h1>
+  <form action="/search" class="mb-4">
+    <div class="input-group">
+      <input type="text" name="ingredient" class="form-control" placeholder="Enter an ingredient to search">
+      <input type="submit" value="Search" class="btn btn-primary">
+    </div>
+  </form>
   <div class="row mb-4">
       <% @cocktails.each do |cocktail| %>
         <div class="col-12 col-md-6">

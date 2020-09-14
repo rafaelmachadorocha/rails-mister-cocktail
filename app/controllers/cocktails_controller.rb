@@ -38,7 +38,9 @@ class CocktailsController < ApplicationController
   end
 
   def search
-    @cocktails = Cocktail.joins(doses: :ingredient).where('ingredients.name LIKE ?', "%#{params[:ingredient]&.downcase}%").distinct
+    if params[:ingredient]
+      @cocktails = Cocktail.includes(doses: :ingredient).where('ingredients.name LIKE ?', "%#{params[:ingredient]&.downcase}%").references('ingredients').distinct
+    end
   end
 
   private
