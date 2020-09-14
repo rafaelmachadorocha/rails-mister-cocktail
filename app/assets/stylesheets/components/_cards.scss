@@ -5,6 +5,7 @@
   color: rgb(201, 104, 130);
   height: 400px; 
   position: relative;
+  border-radius: 10px;
   z-index: 2;
 }
 
@@ -119,6 +120,7 @@
   box-shadow: 0px 0px 3px 1px rgb(201, 104, 130);
   max-width: 100%;
   margin: 0 auto;
+  border-radius: 10px;
   @media (max-width: 768px) {
     object-fit: cover;
   }
@@ -132,6 +134,7 @@
   max-width: 100%;
   margin: 0 auto;
   min-height: 400px;
+  border-radius: 10px;
   position: relative;
 }
 
